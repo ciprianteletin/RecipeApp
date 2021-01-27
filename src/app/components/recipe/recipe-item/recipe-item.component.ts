@@ -10,14 +10,10 @@ import {RecipeService} from '../../../shared/recipe.service';
 export class RecipeItemComponent implements OnInit {
   @Input() recipeItem: Recipe;
 
-  constructor(private recipeService: RecipeService) {
+  constructor(public recipeService: RecipeService) {
   }
 
   ngOnInit(): void {
-  }
-
-  onClickRecipe(): void {
-    this.recipeService.getPassRecipeEvent().emit(this.recipeItem);
   }
 
 }

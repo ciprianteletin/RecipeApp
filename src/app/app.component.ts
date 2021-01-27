@@ -6,14 +6,7 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  displayRecipeOrShopping = 'recipe';
-
   constructor() {
 
   }
-
-  chooseDisplay(data: string): void {
-    this.displayRecipeOrShopping = data;
-  }
-
 }

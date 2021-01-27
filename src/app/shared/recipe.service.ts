@@ -27,6 +27,10 @@ export class RecipeService {
     return this.recipes.slice();
   }
 
+  getIdOfRecipe(recipe: Recipe): number {
+    return this.recipes.findIndex((currentRecipe: Recipe) => recipe.name === currentRecipe.name);
+  }
+
   getPassRecipeEvent(): EventEmitter<Recipe> {
     return this.passRecipe;
   }
