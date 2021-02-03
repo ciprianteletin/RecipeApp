@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Ingredient} from '../../../shared/ingredient.model';
 import {ShoppingListService} from '../../../shared/shopping-list.service';
 
@@ -10,10 +10,15 @@ import {ShoppingListService} from '../../../shared/shopping-list.service';
 export class ShoppingListComponent implements OnInit {
   ingredients: Ingredient[];
 
-  constructor(private shoppingService: ShoppingListService) { }
+  constructor(private shoppingService: ShoppingListService) {
+  }
 
   ngOnInit(): void {
     this.ingredients = this.shoppingService.getIngredients();
+  }
+
+  onEditItem(index: number): void {
+    this.shoppingService.startedEditing.next(index);
   }
 
 }
