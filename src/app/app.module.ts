@@ -14,6 +14,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {DropdownDirective} from './shared/dropdown.directive';
 import {NoRecipeComponent} from './components/recipe/no-recipe/no-recipe.component';
 import {RecipeEditComponent} from './components/recipe/recipe-edit/recipe-edit.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import {RecipeEditComponent} from './components/recipe/recipe-edit/recipe-edit.c
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     ReactiveFormsModule,
     FormsModule
   ],
