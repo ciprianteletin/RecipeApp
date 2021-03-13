@@ -1,12 +1,14 @@
 import {Injectable} from '@angular/core';
 import {Recipe} from '../components/recipe/recipe.model';
-import {Ingredient} from './ingredient.model';
 import {Subject} from 'rxjs';
 
 @Injectable({providedIn: 'root'})
 export class RecipeService {
   recipeChanges = new Subject<Recipe[]>();
   private recipes: Recipe[] = [];
+
+  constructor() {
+  }
 
   getRecipesList(): Recipe[] {
     return this.recipes.slice();

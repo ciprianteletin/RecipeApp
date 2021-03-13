@@ -1,5 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+import {StoreModule} from '@ngrx/store';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -12,6 +13,7 @@ import {LoadingSpinnerComponent} from './shared/loading-spinner/loading-spinner.
 import {AuthInterceptorService} from './components/auth/auth-interceptor.service';
 import {RecipeModule} from './components/recipe/recipe.module';
 import {ShoppingModule} from './components/shopping/shopping.module';
+import * as fromApp from './store/app.reducer';
 
 
 @NgModule({
@@ -28,6 +30,7 @@ import {ShoppingModule} from './components/shopping/shopping.module';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    StoreModule.forRoot(fromApp.appReducer),
     RecipeModule,
     ShoppingModule
   ],
